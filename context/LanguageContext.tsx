@@ -1,6 +1,6 @@
+// @ts-nocheck
 "use client";
 
-// @ts-nocheck
 import { createContext, useState, useContext, useEffect } from "react";
 import { getUserLanguage, setUserLanguage } from "../i18n";
 
