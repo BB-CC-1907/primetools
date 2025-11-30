@@ -6,7 +6,7 @@ import { getUserLanguage, setUserLanguage } from "../i18n";
 
 const LanguageContext = createContext({
   language: "de",
-  changeLanguage: () => {},
+  changeLanguage: (lang: string) => {},
 });
 
 export const LanguageProvider = ({ children }) => {
