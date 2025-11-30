@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+/* Fallbacks, falls Tailwind mal spinnt */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #F5F1EA;
+  color: #2E2E2E;
+}
+
+/* Links */
+a {
+  color: #1CC5C5;
+}
+
+/* Buttons, Karten – werden in den Components über className benutzt */
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-ptAccent px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition hover:opacity-90;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center rounded-full border border-ptAccent px-5 py-2.5 text-sm font-semibold text-ptAccent bg-white hover:bg-ptAccent hover:text-white transition;
+}
+
+.card {
+  @apply rounded-2xl bg-white p-6 shadow-soft;
+}

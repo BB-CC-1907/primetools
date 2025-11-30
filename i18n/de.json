@@ -1,0 +1,156 @@
+{
+  "appName": "PrimeTools",
+  "nav": {
+  "home": "Startseite",
+  "pdfTools": "PDF-Tools",
+  "textTools": "Textwerkzeuge",
+  "emoji": "Emoji-Generator",
+  "captions": "Social-Media-Bildunterschriften",
+  "pricing": "Preisgestaltung (folgt in Kürze)",
+  "login": "Anmelden",
+  "signup": "Registrieren"
+},
+  "cta": {
+    "premiumBadge": "Premium (demnächst verfügbar)"
+  },
+  "hero": {
+    "badge": "KI-Tools an einem Ort",
+    "title": "Arbeiten Sie intelligenter mit KI-Tools an einem Ort.",
+    "subtitle": "PrimeTools vereint PDF-, Text-, Emoji- und Social-Media-Caption-Tools in einer übersichtlichen und schnellen Benutzeroberfläche. Die kostenlose Version ist bereits verfügbar – die Premium-Version folgt in Kürze.",
+    "primary": "Kostenlos starten",
+    "secondary": "Preisgestaltung (folgt in Kürze)",
+    "note": "Keine Installation erforderlich. Funktioniert auf Desktop- und Mobilgeräten. Für die Nutzung der kostenlosen Tools ist kein Konto notwendig."
+  },
+  "heroIncluded": {
+    "title": "Enthaltene Werkzeuge",
+    "line1": "PDF-Tools – komprimieren, zusammenführen und konvertieren",
+    "line2": "Textwerkzeuge – umschreiben, vereinfachen und zusammenfassen",
+    "line3": "Emoji-Generator – benutzerdefinierte KI-Emojis",
+    "line4": "Social Captions – Bildunterschriften & Hashtags"
+  },
+  "features": {
+    "title": "Warum PrimeTools?",
+    "item1Title": "Schnell und einfach",
+    "item1Text": "Nutzen Sie alle Tools direkt im Browser – keine Registrierung, keine Installation.",
+    "item2Title": "Daten bleiben bei Ihnen",
+    "item2Text": "Wir verarbeiten Ihre Dateien nur für die ausgewählte Aktion und speichern sie nicht dauerhaft.",
+    "item3Title": "Schritt für Schritt erweitert",
+    "item3Text": "Neue Tools und Funktionen kommen laufend hinzu."
+  },
+  "toolsSection": {
+    "title": "Unsere Tools",
+    "subtitle": "Alle Ihre wichtigsten Tools. Eine übersichtliche Benutzeroberfläche.",
+    "pdf": {
+      "title": "PDF-Tools",
+      "subtitle": "Komprimieren, zusammenführen, teilen und konvertieren Sie Ihre PDFs in Sekundenschnelle.",
+      "bullet1": "PDFs komprimieren",
+      "bullet2": "Mehrere Dateien zusammenführen",
+      "bullet3": "Aufteilung nach Seitenbereich",
+      "bullet4": "Dateien in PDF umwandeln",
+      "bullet5": "PDF → JPG",
+      "bullet6": "PDF-Seiten drehen",
+      "bullet7": "Einzelne Seiten extrahieren",
+      "button": "PDF-Tools öffnen"
+    },
+    "text": {
+      "title": "Textwerkzeuge",
+      "subtitle": "Schreiben Sie Ihren Text im Handumdrehen um, vereinfachen oder fassen Sie ihn zusammen.",
+      "bullet1": "Absätze umschreiben",
+      "bullet2": "Zusammenfassungen",
+      "bullet3": "Checklisten",
+      "bullet4": "Einfache E-Mail-Entwürfe",
+      "button": "Textwerkzeuge öffnen"
+    },
+    "emoji": {
+      "title": "Emoji-Tools",
+      "subtitle": "Emojis für Chats, Posts und Nachrichten generieren oder kombinieren.",
+      "bullet1": "Emoji-Vorschläge",
+      "bullet2": "Emoji-Kombinationen",
+      "bullet3": "Emoji-Beschreibungen",
+      "bullet4": "Spaß-Funktionen",
+      "button": "Emoji-Tools öffnen"
+    },
+    "captions": {
+      "title": "Bildunterschriften",
+      "subtitle": "Schnelle Captions für Social-Media-Posts und Bilder.",
+      "bullet1": "Kurze Bildunterschriften",
+      "bullet2": "Hashtag-Ideen",
+      "bullet3": "Varianten",
+      "bullet4": "Weitere Funktionen folgen",
+      "button": "Caption-Tools öffnen"
+    }
+  },
+  "pricingSection": {
+    "title": "Jetzt kostenlos. Später Premium.",
+    "subtitle": "Testen Sie PrimeTools noch heute mit dem kostenlosen Tarif. Premium-Abonnements folgen in Kürze.",
+    "free": {
+      "title": "Kostenlos (live)",
+      "subtitle": "Kostenlos starten mit fairen Tageslimits. Kein Konto erforderlich.",
+      "price": "0 €",
+      "perMonth": "pro Monat",
+      "bullet1": "Zugriff auf alle Tools",
+      "bullet2": "Angemessene Tageslimits",
+      "bullet3": "Anzeigen (geplant)",
+      "bullet4": "Keine Kreditkarte erforderlich",
+      "button": "Nutzen Sie PrimeTools kostenlos"
+    },
+    "premium": {
+      "title": "Premium (demnächst verfügbar)",
+      "subtitle": "Keine Werbung, höhere Limits und zusätzliche Funktionen – demnächst verfügbar.",
+      "price": "3,99 €",
+      "perMonth": "pro Monat",
+      "note": "Geplant: 39,99 € pro Jahr (2 Monate gratis).",
+      "bullet1": "Keine Werbung",
+      "bullet2": "Höhere oder keine Tageslimits",
+      "bullet3": "Schnellere Verarbeitung",
+      "bullet4": "Größere PDFs, mehr Textmodi",
+      "bullet5": "HD-Emojis & Stickerpakete",
+      "bullet6": "Mehr Untertitelstile und -varianten",
+      "button": "Premium-Version demnächst verfügbar"
+    }
+  },
+  "footer": {
+    "rights": "© 2025 PrimeTools. Alle Rechte vorbehalten.",
+    "about": "Über",
+    "privacy": "Datenschutz",
+    "terms": "Bedingungen",
+    "contact": "Kontakt"
+  },
+  "pdfPage": {
+    "title": "PDF-Tools",
+    "subtitle": "Laden Sie eine oder mehrere Dateien hoch und wählen Sie die gewünschte Aktion. Die Funktionen werden Schritt für Schritt erweitert.",
+    "uploadLabel": "Dateien hierher ziehen oder klicken, um auszuwählen",
+    "uploadHint": "Unterstützt werden z. B. PDF, Bilder und Office-Dateien. Die tatsächliche Verarbeitung wird noch entwickelt.",
+    "selectedFiles": "Ausgewählte Dateien",
+    "noFiles": "Noch keine Dateien ausgewählt.",
+    "actionsTitle": "Aktionen",
+    "compress": "PDFs komprimieren",
+    "compressDescription": "PDFs kleiner machen, um sie leichter hochladen oder versenden zu können.",
+    "merge": "Mehrere PDFs zusammenführen",
+    "mergeDescription": "Mehrere PDFs zu einem einzigen Dokument zusammenführen.",
+    "split": "PDF nach Seitenbereich aufteilen",
+    "splitDescription": "Bestimmte Seitenbereiche aus einem PDF als neue Datei speichern.",
+    "toPdf": "Dateien in PDF umwandeln",
+    "toPdfDescription": "Bilder oder Office-Dokumente in PDF-Dateien umwandeln.",
+    "toJpg": "PDF-Seiten in JPG umwandeln",
+    "toJpgDescription": "Einzelne PDF-Seiten als JPG-Bilder exportieren.",
+    "rotate": "PDF-Seiten drehen",
+    "rotateDescription": "Richten Sie falsch gedrehte PDF-Seiten schnell wieder korrekt aus.",
+    "extract": "Einzelne Seiten extrahieren",
+    "extractDescription": "Jede Seite der PDF wird als eigene Datei gespeichert.",
+    "splitInputLabel": "Seiten auswählen",
+    "splitInputPlaceholder": "z. B. 1-3,5,7-9",
+    "splitInputHint": "Verwenden Sie Kommas für einzelne Seiten und Bindestriche für Bereiche (Beispiel: 1-3,5,7-9).",
+    "clearAllFiles": "Alle Dateien entfernen",
+    "rotate": "PDF-Seiten drehen",
+    "rotateDescription": "Richten Sie falsch gedrehte PDF-Seiten schnell wieder korrekt aus.",
+    "rotateAngleLabel": "Drehwinkel auswählen",
+    "rotateAngle90": "90° (im Uhrzeigersinn)",
+    "rotateAngle180": "180°",
+    "rotateAngle270": "270° (im Uhrzeigersinn)",
+    "rotateAngleHint": "Gilt für alle ausgewählten Seiten.",
+    "comingSoon": "Diese Funktion wird gerade entwickelt und steht demnächst zur Verfügung.",
+    "backToHome": "Zur Startseite",
+    "simpleCompressionNote": "Hinweis: Die Komprimierung ist aktuell eine einfache Basis-Optimierung. Die Dateigröße kann nur leicht reduziert werden. Eine starke Komprimierung folgt später."
+  }
+}

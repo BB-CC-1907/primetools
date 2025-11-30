@@ -1,0 +1,156 @@
+{
+  "appName": "PrimeTools",
+  "nav": {
+  "home": "Home",
+  "pdfTools": "PDF tools",
+  "textTools": "Text tools",
+  "emoji": "Emoji generator",
+  "captions": "Social-media captions",
+  "pricing": "Pricing (coming soon)",
+  "login": "Log in",
+  "signup": "Sign up"
+},
+  "cta": {
+    "premiumBadge": "Premium (coming soon)"
+  },
+  "hero": {
+    "badge": "AI tools in one place",
+    "title": "Work smarter with AI tools in one place.",
+    "subtitle": "PrimeTools combines PDF, text, emoji and social media caption tools in one clean and fast interface. The free version is available now – the premium version is coming soon.",
+    "primary": "Start for free",
+    "secondary": "Pricing (coming soon)",
+    "note": "No installation required. Works on desktop and mobile devices. No account needed for the free tools."
+  },
+  "heroIncluded": {
+    "title": "Included tools",
+    "line1": "PDF tools – compress, merge and convert",
+    "line2": "Text tools – rewrite, simplify and summarise",
+    "line3": "Emoji generator – custom AI emojis",
+    "line4": "Social captions – captions & hashtags"
+  },
+  "features": {
+    "title": "Why PrimeTools?",
+    "item1Title": "Fast and simple",
+    "item1Text": "Use all tools directly in your browser – no registration, no installation.",
+    "item2Title": "Your data stays with you",
+    "item2Text": "We only process your files for the selected action and do not store them permanently.",
+    "item3Title": "Growing toolkit",
+    "item3Text": "New tools and features are added step by step."
+  },
+  "toolsSection": {
+    "title": "Our tools",
+    "subtitle": "All your essential tools. One clear interface.",
+    "pdf": {
+      "title": "PDF tools",
+      "subtitle": "Compress, merge, split and convert your PDFs in seconds.",
+      "bullet1": "Compress PDFs",
+      "bullet2": "Merge multiple files",
+      "bullet3": "Split by page range",
+      "bullet4": "Convert files to PDF",
+      "bullet5": "PDF → JPG",
+      "bullet6": "Rotate PDF pages",
+      "bullet7": "Extract individual pages",
+      "button": "Open PDF tools"
+    },
+    "text": {
+      "title": "Text tools",
+      "subtitle": "Rewrite, simplify or summarise your text in seconds.",
+      "bullet1": "Rewrite paragraphs",
+      "bullet2": "Summaries",
+      "bullet3": "Checklists",
+      "bullet4": "Simple email drafts",
+      "button": "Open text tools"
+    },
+    "emoji": {
+      "title": "Emoji tools",
+      "subtitle": "Generate or combine emojis for chats, posts and messages.",
+      "bullet1": "Emoji suggestions",
+      "bullet2": "Emoji combinations",
+      "bullet3": "Emoji descriptions",
+      "bullet4": "Fun extras",
+      "button": "Open emoji tools"
+    },
+    "captions": {
+      "title": "Caption tools",
+      "subtitle": "Quick captions for social media posts and images.",
+      "bullet1": "Short captions",
+      "bullet2": "Hashtag ideas",
+      "bullet3": "Variations",
+      "bullet4": "More features coming soon",
+      "button": "Open caption tools"
+    }
+  },
+  "pricingSection": {
+    "title": "Free now. Premium later.",
+    "subtitle": "Try PrimeTools today with the free plan. Premium subscriptions are coming soon.",
+    "free": {
+      "title": "Free (live)",
+      "subtitle": "Start for free with fair daily limits. No account required.",
+      "price": "€0",
+      "perMonth": "per month",
+      "bullet1": "Access to all tools",
+      "bullet2": "Reasonable daily limits",
+      "bullet3": "Ads (planned)",
+      "bullet4": "No credit card required",
+      "button": "Use PrimeTools for free"
+    },
+    "premium": {
+      "title": "Premium (coming soon)",
+      "subtitle": "No ads, higher limits and additional features – coming soon.",
+      "price": "€3.99",
+      "perMonth": "per month",
+      "note": "Planned: €39.99 per year (2 months free).",
+      "bullet1": "No ads",
+      "bullet2": "Higher or no daily limits",
+      "bullet3": "Faster processing",
+      "bullet4": "Larger PDFs, more text modes",
+      "bullet5": "HD emojis & sticker packs",
+      "bullet6": "More caption styles and variants",
+      "button": "Premium version coming soon"
+    }
+  },
+  "footer": {
+    "rights": "© 2025 PrimeTools. All rights reserved.",
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact"
+  },
+  "pdfPage": {
+    "title": "PDF tools",
+    "subtitle": "Upload one or more files and choose an action. The features are being expanded step by step.",
+    "uploadLabel": "Drag files here or click to select",
+    "uploadHint": "Supported are e.g. PDF, images and Office files. Actual processing is still being developed.",
+    "selectedFiles": "Selected files",
+    "noFiles": "No files selected yet.",
+    "actionsTitle": "Actions",
+    "compress": "Compress PDFs",
+    "compressDescription": "Make PDFs smaller so they are easier to upload or send.",
+    "merge": "Merge multiple PDFs",
+    "mergeDescription": "Combine multiple PDFs into a single document.",
+    "split": "Split by page range",
+    "splitDescription": "Save specific page ranges from a PDF as a new file.",
+    "toPdf": "Convert files to PDF",
+    "toPdfDescription": "Convert images or Office documents into PDF files.",
+    "toJpg": "Convert PDF pages to JPG",
+    "toJpgDescription": "Export individual PDF pages as JPG images.",
+    "rotate": "Rotate PDF pages",
+    "rotateDescription": "Quickly fix PDF pages that are rotated the wrong way.",
+    "extract": "Extract individual pages",
+    "extractDescription": "Each page of the PDF is saved as a separate file.",
+    "splitInputLabel": "Select pages",
+    "splitInputPlaceholder": "e.g. 1-3,5,7-9",
+    "splitInputHint": "Use commas for single pages and dashes for ranges (example: 1-3,5,7-9).",
+    "clearAllFiles": "Remove all files",
+    "rotate": "Rotate PDF pages",
+    "rotateDescription": "Quickly fix PDF pages that are rotated the wrong way.",
+    "rotateAngleLabel": "Choose rotation angle",
+    "rotateAngle90": "90° clockwise",
+    "rotateAngle180": "180°",
+    "rotateAngle270": "270° clockwise",
+    "rotateAngleHint": "Applies to all selected pages.",
+    "comingSoon": "This feature is currently being developed and will be available soon.",
+    "backToHome": "Back to home",
+    "simpleCompressionNote": "Note: The current compression is a simple basic optimisation. The file size may only be reduced slightly. A stronger compression mode will be added later."
+  }
+}
