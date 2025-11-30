@@ -1,15 +1,27 @@
 import { NextResponse } from "next/server";
 import { PDFDocument } from "pdf-lib";
 
-// Sicherstellen, dass die Route im Node-Runtime läuft (nicht Edge)
+// Sicherstellen, dass wir im Node.js-Runtime laufen (nicht Edge)
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   try {
     const formData = await req.formData();
-    const files = formData.getAll("files");
 
-    if (!files || files.length < 2) {
+    // Je nach Frontend-Key – wir sammeln alles ein, was wie Dateien aussieht
+    const allEntries: FormDataEntryValue[] = [
+      ...formData.getAll("files"),
+      ...formData.getAll("pdfs"),
+      ...formData.getAll("pdfFiles"),
+    ];
+
+    // Nur Werte behalten, die wirklich Datei-ähnlich sind
+    const fileEntries = allEntries.filter(
+      (entry: FormDataEntryValue) =>
+        typeof (entry as any)?.arrayBuffer === "function"
+    ) as any[];
+
+    if (!fileEntries || fileEntries.length < 2) {
       return NextResponse.json(
         { error: "Bitte mindestens zwei PDF-Dateien hochladen." },
         { status: 400 }
@@ -18,15 +30,15 @@ export async function POST(req: Request) {
 
     const mergedPdf = await PDFDocument.create();
 
-    for (const entry of files) {
-      // Nur echte File-Objekte weiterverarbeiten
-      if (!(entry instanceof File)) continue;
+    for (const entry of fileEntries) {
+      const file: any = entry;
 
-      // Nur PDFs akzeptieren
-      if (entry.type !== "application/pdf") continue;
+      // Wenn ein MIME-Typ vorhanden ist und nicht PDF → überspringen
+      if (file.type && file.type !== "application/pdf") {
+        continue;
+      }
 
-      // Datei in ArrayBuffer und dann in pdf-lib laden
-      const arrayBuffer = await entry.arrayBuffer();
+      const arrayBuffer = await file.arrayBuffer();
       const pdf = await PDFDocument.load(arrayBuffer);
 
       const copiedPages = await mergedPdf.copyPages(
