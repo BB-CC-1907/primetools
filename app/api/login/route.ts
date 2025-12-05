@@ -20,20 +20,8 @@ export async function POST(request: Request) {
       );
     }
 
-    // Cookie setzen (z. B. 7 Tage gültig)
-    const response = NextResponse.json({ success: true });
-
-    response.cookies.set({
-      name: "primetools_auth",
-      value: "ok", // einfacher Marker, kein echtes Session-System
-      httpOnly: true,
-      path: "/",
-      maxAge: 7 * 24 * 60 * 60, // 7 Tage
-      sameSite: "lax",
-      secure: process.env.NODE_ENV === "production",
-    });
-
-    return response;
+    // ✅ Kein Cookie mehr setzen – nur Erfolg zurückgeben
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Login-Fehler:", error);
     return NextResponse.json(
