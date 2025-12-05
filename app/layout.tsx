@@ -1,21 +1,22 @@
 import "./globals.css";
 import { Providers } from "./providers";
+import SessionPasswordGate from "../components/SessionPasswordGate";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "PrimeTools – KI-Tools für PDFs, Texte, Emojis & Social Media",
   description:
-    "PrimeTools bündelt kostenlose KI-Tools für PDFs, Texte, Emojis und Social-Media-Bildunterschriften in einer übersichtlichen Web-App.",
+    "PrimeTools bündelt kostenlose KI-Tools für PDFs, Texte, Emojis und Social-Media-Bildunterschriften in einer Oberfläche.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="de">
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <SessionPasswordGate>{children}</SessionPasswordGate>
+        </Providers>
       </body>
     </html>
   );
