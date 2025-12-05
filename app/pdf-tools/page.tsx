@@ -543,6 +543,22 @@ const rotatePdf = async () => {
             </button>
 
             <button
+              className="rounded-2xl bg-white p-4 text-left text-sm text-[#444444] shadow-sm ring-1 ring-[#eddcc7] hover:bg-[#f9efe3]"
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  window.open("/pdf-to-image.html", "_blank");
+                }
+              }}
+            >
+              <div className="font-semibold text-[#222222]">
+                PDF-Seiten in JPG/PNG umwandeln
+              </div>
+              <div className="mt-1 text-xs text-[#777777]">
+                Eine ausgewählte Seite als Bild speichern.
+              </div>
+            </button>
+
+            <button
               onClick={() => handleActionClick("merge")}
               className="rounded-2xl bg-white p-4 text-left text-sm text-[#444444] shadow-sm ring-1 ring-[#eddcc7] hover:bg-[#f9efe3]"
             >
@@ -569,16 +585,6 @@ const rotatePdf = async () => {
               <div className="font-semibold">{t("pdfPage.toPdf")}</div>
               <div className="mt-1 text-xs text-[#777777]">
                 {t("pdfPage.toPdfDescription")}
-              </div>
-            </button>
-
-            <button
-              onClick={() => handleActionClick("toJpg")}
-              className="rounded-2xl bg-white p-4 text-left text-sm text-[#444444] shadow-sm ring-1 ring-[#eddcc7] hover:bg-[#f9efe3]"
-            >
-              <div className="font-semibold">{t("pdfPage.toJpg")}</div>
-              <div className="mt-1 text-xs text-[#777777]">
-                {t("pdfPage.toJpgDescription")}
               </div>
             </button>
 

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PDF-Seiten in Bild umwandeln – PrimeTools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- pdf.js aus CDN (Version, die gut mit Browsern läuft) -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Worker-Datei für pdf.js konfigurieren
+      if (window["pdfjsLib"]) {
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+          "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+      }
+    </script>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #f7efe6;
+        color: #222222;
+      }
+
+      .page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px 16px 40px;
+      }
+
+      .card {
+        background: #fffdf8;
+        border-radius: 16px;
+        padding: 20px 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        border: 1px solid #f0e2d3;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 4px;
+      }
+
+      p.subtitle {
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #555555;
+        font-size: 14px;
+      }
+
+      .input-group {
+        margin-bottom: 16px;
+      }
+
+      label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      input[type="file"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 10px;
+        border: 1px solid #e0d2c2;
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+
+      button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: none;
+        background: #14b8a6;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #0f9889;
+      }
+
+      .hint {
+        font-size: 12px;
+        color: #777777;
+        margin-top: 4px;
+      }
+
+      .footer {
+        margin-top: 18px;
+        font-size: 12px;
+        color: #888888;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 12px;
+        font-size: 13px;
+        color: #555555;
+        text-decoration: none;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <a href="/pdf-tools" class="back-link">← Zurück zu den PDF-Tools</a>
+
+      <div class="card">
+        <h1>PDF-Seiten in Bild umwandeln</h1>
+        <p class="subtitle">
+          Wähle eine PDF-Datei und speichere eine bestimmte Seite als JPG- oder
+          PNG-Bild.
+        </p>
+
+        <div class="input-group">
+          <label for="file">PDF-Datei auswählen</label>
+          <input id="file" type="file" accept="application/pdf" />
+          <div class="hint">
+            Deine Datei wird nur im Browser verarbeitet und nicht hochgeladen.
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="page">Seitennummer</label>
+          <input
+            id="page"
+            type="number"
+            min="1"
+            value="1"
+            placeholder="z. B. 1"
+          />
+          <div id="pageInfo" class="hint"></div>
+        </div>
+
+        <div class="input-group">
+          <label for="format">Bildformat</label>
+          <select id="format">
+            <option value="image/jpeg">JPG</option>
+            <option value="image/png">PNG</option>
+          </select>
+        </div>
+
+        <button id="convertBtn">Seite als Bild speichern</button>
+
+        <div class="footer" id="status"></div>
+      </div>
+    </div>
+
+    <script>
+      const fileInput = document.getElementById("file");
+      const pageInput = document.getElementById("page");
+      const formatSelect = document.getElementById("format");
+      const convertBtn = document.getElementById("convertBtn");
+      const pageInfo = document.getElementById("pageInfo");
+      const statusEl = document.getElementById("status");
+
+      let pdfData = null;
+      let pdfDoc = null;
+
+      function setStatus(msg) {
+        statusEl.textContent = msg || "";
+      }
+
+      // PDF laden, sobald eine Datei ausgewählt wurde
+      fileInput.addEventListener("change", async (event) => {
+        const file = event.target.files[0];
+        pdfDoc = null;
+        pageInfo.textContent = "";
+        setStatus("");
+
+        if (!file) return;
+
+        if (!window["pdfjsLib"]) {
+          alert("pdf.js konnte nicht geladen werden.");
+          return;
+        }
+
+        try {
+          setStatus("PDF wird geladen ...");
+
+          const arrayBuffer = await file.arrayBuffer();
+
+          const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+          pdfDoc = await loadingTask.promise;
+
+          pageInfo.textContent = `Dieses PDF hat ${pdfDoc.numPages} Seiten.`;
+          setStatus("PDF erfolgreich geladen.");
+        } catch (error) {
+          console.error(error);
+          alert("Beim Laden der PDF-Datei ist ein Fehler aufgetreten.");
+          setStatus("");
+        }
+      });
+
+      // Konvertieren-Button
+      convertBtn.addEventListener("click", async () => {
+        if (!pdfDoc) {
+          alert("Bitte zuerst eine PDF-Datei auswählen.");
+          return;
+        }
+
+        const pageNumber = parseInt(pageInput.value, 10);
+        if (
+          !pageNumber ||
+          pageNumber < 1 ||
+          pageNumber > pdfDoc.numPages
+        ) {
+          alert("Bitte eine gültige Seitennummer angeben.");
+          return;
+        }
+
+        const file = fileInput.files[0];
+        if (!file) {
+          alert("Bitte zuerst eine PDF-Datei auswählen.");
+          return;
+        }
+
+        const mimeType = formatSelect.value;
+        const ext = mimeType === "image/png" ? "png" : "jpg";
+
+        try {
+          setStatus("Seite wird gerendert ...");
+
+          const page = await pdfDoc.getPage(pageNumber);
+          const viewport = page.getViewport({ scale: 2.0 });
+
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+
+          const renderContext = {
+            canvasContext: context,
+            viewport,
+          };
+
+          await page.render(renderContext).promise;
+
+          setStatus("Bild wird erstellt ...");
+
+          canvas.toBlob(
+            (blob) => {
+              if (!blob) {
+                alert("Beim Erzeugen des Bildes ist ein Fehler aufgetreten.");
+                setStatus("");
+                return;
+              }
+
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement("a");
+              const baseName =
+                file.name.replace(/\.pdf$/i, "") || "seite";
+              a.href = url;
+              a.download = `${baseName}-seite-${pageNumber}.${ext}`;
+              document.body.appendChild(a);
+              a.click();
+              a.remove();
+              URL.revokeObjectURL(url);
+
+              setStatus("Fertig! Das Bild wurde heruntergeladen.");
+            },
+            mimeType,
+            0.9
+          );
+        } catch (error) {
+          console.error(error);
+          alert("Beim Erzeugen des Bildes ist ein Fehler aufgetreten.");
+          setStatus("");
+        }
+      });
+    </script>
+  </body>
+</html>
